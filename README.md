@@ -1,27 +1,27 @@
-# Angular
+# Mobiscroll Angular Demos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.2.
+### Clone the repository
 
-## Development server
+$ ```git clone https://github.com/acidb/mobiscroll-demos-angular.git```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Install the Mobiscroll CLI
 
-## Code scaffolding
+$ ```npm install -g @mobiscroll/cli```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Start a trial
 
-## Build
+if not started or do not have license [start a trial here](https://mobiscroll.com/starttrial)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Config Mobiscroll
 
-## Running unit tests
+run the $ ```mobiscroll config angular``` command in in the root folder
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install dependencies
 
-## Running end-to-end tests
+run $ ```npm install``` command in the root folder
+  
+## Run the project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+$ ```ng serve```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Do you have a problem with any of the demos? Let us know either by sending an email to support@mobiscroll.com or by submitting a pull request, submitting an issue.
