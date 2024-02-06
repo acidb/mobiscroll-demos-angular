@@ -1,0 +1,43 @@
+<div mbsc-draggable [dragData]="dragData1" class="event-hooks-draggable" [ngStyle]="{background: '#ffdab8'}">
+  <div class="draggable-title">External drag 1</div>
+  <div class="draggable-text">Drag me to calendar</div>
+</div>
+
+<div mbsc-draggable [dragData]="dragData2" class="event-hooks-draggable" [ngStyle]="{background: '#ddfcf7'}">
+  <div class="draggable-title">External drag 2</div>
+  <div class="draggable-text">Drag me to calendar</div>
+</div>
+
+<mbsc-eventcalendar
+  [data]="myEvents"
+  [view]="view"
+  [invalid]="invalid"
+  [dragToCreate]="true"
+  [dragToMove]="true"
+  [dragToResize]="true"
+  [externalDrop]="true"
+  (onCellClick)="onCellClick()"
+  (onCellDoubleClick)="onCellDoubleClick()"
+  (onCellRightClick)="onCellRightClick()"
+  (onCellHoverIn)="onCellHoverIn()"
+  (onCellHoverOut)="onCellHoverOut()"
+  (onDestroy)="onDestroy()"
+  (onEventClick)="onEventClick()"
+  (onEventCreate)="onEventCreate()"
+  (onEventCreated)="onEventCreated()"
+  (onEventCreateFailed)="onEventCreateFailed()"
+  (onEventDelete)="onEventDelete()"
+  (onEventDeleted)="onEventDeleted()"
+  (onEventHoverIn)="onEventHoverIn()"
+  (onEventHoverOut)="onEventHoverOut()"
+  (onEventRightClick)="onEventRightClick()"
+  (onEventUpdate)="onEventUpdate()"
+  (onEventUpdated)="onEventUpdated()"
+  (onEventUpdateFailed)="onEventUpdateFailed()"
+  (onInit)="onInit()"
+  (onLabelClick)="onLabelClick()"
+  (onPageChange)="onPageChange()"
+  (onPageLoaded)="onPageLoaded()"
+  (onPageLoading)="onPageLoading()"
+  (onSelectedDateChange)="onSelectedDateChange()"
+></mbsc-eventcalendar>

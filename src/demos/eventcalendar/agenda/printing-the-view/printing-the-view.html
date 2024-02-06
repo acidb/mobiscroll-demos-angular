@@ -1,0 +1,10 @@
+<mbsc-page class="mds-full-height">
+  <div class="mds-full-height mbsc-flex-col">
+    <div class="mbsc-flex-none">
+      <mbsc-button (click)="print()" startIcon="print">Print agenda</mbsc-button>
+    </div>
+    <div class="mds-overflow-hidden mbsc-flex-1-1">
+      <mbsc-eventcalendar #calendar [data]="myEvents" [modules]="myModules" [view]="myView"></mbsc-eventcalendar>
+    </div>
+  </div>
+</mbsc-page>

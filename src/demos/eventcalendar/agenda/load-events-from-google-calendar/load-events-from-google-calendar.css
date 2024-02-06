@@ -1,0 +1,73 @@
+.mds-google-cal-switch .mbsc-segmented {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.mds-google-cal-nav {
+  width: 200px;
+}
+
+.mds-loader {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #8c8c8c;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: mds-loader-rotation 1s linear infinite;
+  visibility: hidden;
+}
+
+@keyframes mds-loader-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Material header order */
+
+.mbsc-material.mds-google-cal-prev {
+  order: 1;
+}
+
+.mbsc-material.mds-google-cal-next {
+  order: 2;
+}
+
+.mbsc-material.mds-google-cal-nav {
+  order: 3;
+}
+
+.mbsc-material .mds-google-cal-switch {
+  order: 4;
+}
+
+.mbsc-material .mds-google-cal-today {
+  order: 5;
+}
+
+/* Windows header order */
+
+.mbsc-windows.mds-google-cal-nav {
+  order: 1;
+}
+
+.mbsc-windows.mds-google-cal-prev {
+  order: 2;
+}
+
+.mbsc-windows.mds-google-cal-next {
+  order: 3;
+}
+
+.mbsc-windows .mds-google-cal-switch {
+  order: 4;
+}
+
+.mbsc-windows .mds-google-cal-today {
+  order: 5;
+}

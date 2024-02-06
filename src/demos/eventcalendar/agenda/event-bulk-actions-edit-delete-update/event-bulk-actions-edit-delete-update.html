@@ -1,0 +1,29 @@
+<mbsc-page class="mds-bulk-actions" (keydown)="onKeyDown($event)">
+  <div class="mbsc-grid mbsc-no-padding">
+    <div class="mbsc-row">
+      <div class="mds-bulk-actions-calendar mbsc-col-sm-9 mbsc-push-sm-3">
+        <mbsc-eventcalendar
+          #calendar
+          [data]="myEvents"
+          [options]="calendarOptions"
+          [(selectedEvents)]="selectedEvents"
+          [selectMultipleEvents]="true"
+        ></mbsc-eventcalendar>
+        <mbsc-select style="display: none" #menu [(ngModel)]="menuAction" [anchor]="menuAnchor" [options]="menuOptions"> </mbsc-select>
+      </div>
+      <div class="mbsc-col-sm-3 mbsc-pull-sm-9 mbsc-flex-col">
+        <div class="mbsc-button-group-block">
+          <mbsc-button (click)="selectAllEvents()">Select all from view</mbsc-button>
+          <mbsc-button (click)="resetSelection()">Reset selection</mbsc-button>
+          <mbsc-button (click)="updateSelectedEvents()">Update selected</mbsc-button>
+        </div>
+        <div class="mbsc-form-group-title">Currently selected</div>
+        <div class="mds-bulk-actions-event-list mbsc-padding mbsc-flex-1-1">
+          <ul>
+            <li *ngFor="let event of selectedEvents;">{{event.title}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</mbsc-page>

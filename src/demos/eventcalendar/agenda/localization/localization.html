@@ -1,0 +1,16 @@
+<mbsc-page class="mds-full-height">
+  <div class="mds-agenda-locale-cont mds-full-height mbsc-flex-col">
+    <div class="mbsc-grid">
+      <div class="mbsc-row">
+        <div class="mbsc-col-sm-8">
+          <mbsc-dropdown [(ngModel)]="localeStr" inputStyle="box" label="Locale" labelStyle="stacked">
+            <option *ngFor="let lang of languages" [value]="lang.value">{{lang.name}}</option>
+          </mbsc-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="mds-overflow-hidden mbsc-flex-1-1">
+      <mbsc-eventcalendar [data]="myEvents" [locale]="localeAll[localeStr]" [view]="myView"></mbsc-eventcalendar>
+    </div>
+  </div>
+</mbsc-page>

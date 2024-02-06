@@ -1,0 +1,38 @@
+.mds-header-filter-nav {
+  width: 180px;
+}
+
+.mds-header-filter-img {
+  width: 25px;
+}
+
+.mds-header-filter-name {
+  margin-left: 10px;
+}
+
+.mds-header-filter .mbsc-segmented {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mds-header-filter .mbsc-segmented-button.mbsc-selected {
+  color: #fff;
+}
+
+.mds-header-filter-1 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-1 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-1 .mbsc-segmented-selectbox-inner {
+  background: #328e39;
+}
+
+.mds-header-filter-2 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-2 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-2 .mbsc-segmented-selectbox-inner {
+  background: #00aabb;
+}
+
+.mds-header-filter-3 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-3 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-3 .mbsc-segmented-selectbox-inner {
+  background: #ea72c0;
+}
