@@ -8,6 +8,8 @@ It is meant to be a learning resource/helping guide to start working with Mobisc
 Required steps to run the project locally:
 -----------------------------------------
 
+- If not signed up yet, or do not have a license [start a trial](https://mobiscroll.com/starttrial)
+
 - Clone the repository
 
       git clone https://github.com/acidb/mobiscroll-demos-angular.git
@@ -15,8 +17,6 @@ Required steps to run the project locally:
 - Install the Mobiscroll CLI from NPM (you'll only have to do it once)
 
       npm install -g @mobiscroll/cli
-
-- if haven't started yet, or do not have a license [start a trial](https://mobiscroll.com/starttrial)
 
 - Config Mobiscroll - open a terminal window (in the root directory) and run:
 
