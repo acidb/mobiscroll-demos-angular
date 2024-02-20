@@ -1,0 +1,15 @@
+<div class="md-resource-background">
+  <mbsc-eventcalendar
+    #mycalendar
+    [view]="view"
+    [data]="myEvents"
+    [resources]="myResources"
+    [sidebarTemplate]="sidebarTemp"
+  ></mbsc-eventcalendar>
+</div>
+
+<ng-template #sidebarTemp let-resource>
+  <div class="md-resource-bg-res-cont">
+    {{ resource.name }} Sidebar
+  </div>
+</ng-template>
