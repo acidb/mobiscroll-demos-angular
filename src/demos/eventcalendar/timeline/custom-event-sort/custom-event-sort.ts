@@ -11,7 +11,7 @@ const day = now.getDay();
 const monday = now.getDate() - day + (day == 0 ? -6 : 1);
 
 @Component({
-  selector: 'app-agenda-custom-event-sort',
+  selector: 'app-eventcalendar-custom-event-sort',
   templateUrl: './custom-event-sort.html',
 })
 export class AppComponent {
@@ -146,9 +146,9 @@ export class AppComponent {
     },
   ];
 
-  myView: MbscEventcalendarView = { agenda: { type: 'week' } };
-
-  orderMyEvents(event: MbscCalendarEvent) {
-    return event['accepted'] ? 1 : -1;
-  }
+  view: MbscEventcalendarView = {
+    timeline: {
+      type: 'week',
+    },
+  };
 }
