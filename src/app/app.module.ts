@@ -96,6 +96,7 @@ import { AppComponent as Demo576 } from '../demos/datepicker/range/rtl-right-to-
 import { AppComponent as Demo518 } from '../demos/eventcalendar/agenda/daily-agenda-with-week-calendar/daily-agenda-with-week-calendar';
 import { AppComponent as Demo573 } from '../demos/eventcalendar/agenda/basic-usage/basic-usage';
 import { AppComponent as Demo501 } from '../demos/eventcalendar/agenda/daily-weekly-monthly-annual-agenda/daily-weekly-monthly-annual-agenda';
+import { AppComponent as Demo753 } from '../demos/eventcalendar/agenda/show-empty-days/show-empty-days';
 import { AppComponent as Demo662 } from '../demos/eventcalendar/agenda/printing-the-view/printing-the-view';
 import { AppComponent as Demo596 } from '../demos/eventcalendar/agenda/custom-event-sort/custom-event-sort';
 import { AppComponent as Demo611 } from '../demos/eventcalendar/agenda/setting-the-timezone/setting-the-timezone';
@@ -103,7 +104,7 @@ import { AppComponent as Demo711 } from '../demos/eventcalendar/agenda/searching
 import { AppComponent as Demo742 } from '../demos/eventcalendar/agenda/navigate-from-external-calendar/navigate-from-external-calendar';
 import { AppComponent as Demo506 } from '../demos/eventcalendar/agenda/event-content-customization/event-content-customization';
 import { AppComponent as Demo508 } from '../demos/eventcalendar/agenda/full-event-customization/full-event-customization';
-import { AppComponent as Demo514 } from '../demos/eventcalendar/agenda/customizing-header/customizing-header';
+import { AppComponent as Demo514 } from '../demos/eventcalendar/agenda/customizing-calendar-header/customizing-calendar-header';
 import { AppComponent as Demo657 } from '../demos/eventcalendar/agenda/custom-event-tooltip/custom-event-tooltip';
 import { AppComponent as Demo730 } from '../demos/eventcalendar/agenda/empty-state/empty-state';
 import { AppComponent as Demo512 } from '../demos/eventcalendar/agenda/resource-filtering-in-header/resource-filtering-in-header';
@@ -125,6 +126,7 @@ import { AppComponent as Demo349 } from '../demos/eventcalendar/calendar-view/mo
 import { AppComponent as Demo346 } from '../demos/eventcalendar/calendar-view/desktop-month-view/desktop-month-view';
 import { AppComponent as Demo442 } from '../demos/eventcalendar/calendar-view/responsive-month-view/responsive-month-view';
 import { AppComponent as Demo661 } from '../demos/eventcalendar/calendar-view/printing-the-view/printing-the-view';
+import { AppComponent as Demo752 } from '../demos/eventcalendar/calendar-view/property-booking-calendar/property-booking-calendar';
 import { AppComponent as Demo447 } from '../demos/eventcalendar/calendar-view/event-labels/event-labels';
 import { AppComponent as Demo443 } from '../demos/eventcalendar/calendar-view/event-popover/event-popover';
 import { AppComponent as Demo595 } from '../demos/eventcalendar/calendar-view/custom-event-sort/custom-event-sort';
@@ -577,6 +579,7 @@ export const demos: any[] = [
               { name: 'Compact daily schedule', unique: 'daily-agenda-with-week-calendar', component: Demo518 },
               { name: 'How to initialize', unique: 'basic-usage', component: Demo573 },
               { name: 'Customize the range', unique: 'daily-weekly-monthly-annual-agenda', component: Demo501 },
+              { name: 'Show empty days', unique: 'show-empty-days', component: Demo753 },
               { name: 'Print mode', unique: 'printing-the-view', component: Demo662 },
             ],
           },
@@ -596,7 +599,7 @@ export const demos: any[] = [
             items: [
               { name: 'Content customization', unique: 'event-content-customization', component: Demo506 },
               { name: 'Full event customization', unique: 'full-event-customization', component: Demo508 },
-              { name: 'Customizing the header', unique: 'customizing-header', component: Demo514 },
+              { name: 'Customizing the calendar header', unique: 'customizing-calendar-header', component: Demo514 },
               { name: 'Custom event tooltip', unique: 'custom-event-tooltip', component: Demo657 },
               { name: 'Empty state', unique: 'empty-state', component: Demo730 },
             ],
@@ -672,6 +675,13 @@ export const demos: any[] = [
               { name: 'Desktop month view', unique: 'desktop-month-view', component: Demo346 },
               { name: 'Responsive', unique: 'responsive-month-view', component: Demo442 },
               { name: 'Print mode', unique: 'printing-the-view', component: Demo661 },
+            ],
+          },
+          {
+            name: 'Common use cases',
+            unique: 20,
+            items: [
+              { name: 'Reservation calendar', unique: 'property-booking-calendar', component: Demo752 },
             ],
           },
           {
@@ -1296,6 +1306,7 @@ export const demoTitleMap: { [key: string]: string } = {};
     Demo518,
     Demo573,
     Demo501,
+    Demo753,
     Demo662,
     Demo596,
     Demo611,
@@ -1325,6 +1336,7 @@ export const demoTitleMap: { [key: string]: string } = {};
     Demo346,
     Demo442,
     Demo661,
+    Demo752,
     Demo447,
     Demo443,
     Demo595,
