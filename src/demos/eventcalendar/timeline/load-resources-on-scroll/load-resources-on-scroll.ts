@@ -68,12 +68,13 @@ export class AppComponent {
       if (!isEndLoaded) {
         this.notify.toast({
           message: 'Loading Resources...',
+          duration: 1000,
         });
       }
 
       this.http
         .jsonp<MbscCalendarEvent[]>(
-          'https://trialdev.mobiscroll.com/load-data-scroll/?start=' +
+          'https://trial.mobiscroll.com/load-data-scroll/?start=' +
             start +
             '&end=' +
             end +
