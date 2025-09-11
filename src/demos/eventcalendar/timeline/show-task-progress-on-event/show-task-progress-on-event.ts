@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   MbscCalendarEvent,
   MbscDatepickerOptions,
   MbscDateType,
   MbscEventcalendarOptions,
+  MbscModule,
   MbscPopup,
   MbscPopupButton,
   MbscPopupOptions,
@@ -21,7 +24,8 @@ setOptions({
   styleUrl: './show-task-progress-on-event.css',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './show-task-progress-on-event.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, FormsModule, MbscModule],
 })
 export class AppComponent {
   @ViewChild('popup', { static: false })
@@ -168,26 +172,26 @@ export class AppComponent {
       if (this.isDraggingProgress) return;
       this.isEdit = true;
       this.tempEvent = args.event;
-      // fill popup form with event data
+      // Fill popup form with event data
       this.loadPopupForm(args.event);
-      // set popup options
+      // Set popup options
       this.popupHeaderText = 'Edit event';
       this.popupButtons = this.popupEditButtons;
       this.popupAnchor = args.domEvent.currentTarget;
-      // open the popup
+      // Open the popup
       this.popup.open();
     },
     onEventCreated: (args) => {
       setTimeout(() => {
         this.isEdit = false;
         this.tempEvent = args.event;
-        // fill popup form with event data
+        // Fill popup form with event data
         this.loadPopupForm(args.event);
-        // set popup options
+        // Set popup options
         this.popupHeaderText = 'New Event';
         this.popupButtons = this.popupAddButtons;
         this.popupAnchor = args.target;
-        // open the popup
+        // Open the popup
         this.popup.open();
       });
     },
@@ -224,7 +228,7 @@ export class AppComponent {
     fullScreen: true,
     onClose: () => {
       if (!this.isEdit) {
-        // refresh the list, if add popup was canceled, to remove the temporary event
+        // Refresh the list, if add popup was canceled, to remove the temporary event
         this.myEvents = [...this.myEvents];
       }
     },
@@ -302,13 +306,13 @@ export class AppComponent {
     this.tempEvent['progress'] = +this.popupEventProgress;
 
     if (this.isEdit) {
-      // update the event in the list
+      // Update the event in the list
       this.myEvents = [...this.myEvents];
     } else {
-      // add the new event to the list
+      // Add the new event to the list
       this.myEvents = [...this.myEvents, this.tempEvent];
     }
-    // close the popup
+    // Close the popup
     this.popup.close();
   }
 }

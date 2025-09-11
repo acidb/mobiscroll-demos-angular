@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import {
   MbscCalendarColor,
   MbscCalendarEvent,
   MbscEventcalendarOptions,
+  MbscModule,
   MbscResource,
   Notifications,
   setOptions /* localeImport */,
@@ -20,7 +22,8 @@ setOptions({
   encapsulation: ViewEncapsulation.None,
   templateUrl: './flight-scheduling-two-synchronized-timelines.html',
   providers: [Notifications],
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
   constructor(private notify: Notifications) {}
@@ -451,9 +454,6 @@ export class AppComponent {
         this.firstCalCont.addEventListener('scroll', this.handleFirstScroll);
       }
     },
-    // onEventDelete: (args) => {
-    //     this.reservations = this.reservations.filter((f) => { return f.id !== args.event.resource; });
-    // },
     onDestroy: () => {
       if (this.firstCalCont) {
         this.firstCalCont.removeEventListener('scroll', this.handleFirstScroll);

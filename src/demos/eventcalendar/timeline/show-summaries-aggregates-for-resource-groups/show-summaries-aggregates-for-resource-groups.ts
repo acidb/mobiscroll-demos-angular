@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import {
   formatDate,
@@ -7,6 +8,7 @@ import {
   MbscEventCreatedEvent,
   MbscEventDeletedEvent,
   MbscEventUpdatedEvent,
+  MbscModule,
   MbscNewEventData,
   MbscPageLoadingEvent,
   MbscResource,
@@ -24,7 +26,8 @@ setOptions({
   styleUrl: './show-summaries-aggregates-for-resource-groups.css',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './show-summaries-aggregates-for-resource-groups.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
   calendarOptions: MbscEventcalendarOptions = {
@@ -908,7 +911,7 @@ export class AppComponent {
     dayEvents.forEach((event) => {
       if (!event['isSummary']) {
         const parentResource = (event.resource as string).split('_')[0];
-        const dayStart = new Date(event.start as Date).setHours(0, 0, 0, 0); // check type
+        const dayStart = new Date(event.start as Date).setHours(0, 0, 0, 0); // Check type
         if (aggregateEvents[parentResource + dayStart]) {
           aggregateEvents[parentResource + dayStart]['consumption'] += event['consumption'];
           aggregateEvents[parentResource + dayStart]['distance'] += event['distance'];

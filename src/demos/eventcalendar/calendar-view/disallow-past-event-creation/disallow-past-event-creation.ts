@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MbscCalendarEvent, MbscEventcalendarOptions, Notifications, setOptions /* localeImport */ } from '@mobiscroll/angular';
+import { MbscCalendarEvent, MbscEventcalendarOptions, MbscModule, Notifications, setOptions /* localeImport */ } from '@mobiscroll/angular';
 
 setOptions({
   // locale,
@@ -15,7 +16,8 @@ const today = new Date();
   encapsulation: ViewEncapsulation.None,
   templateUrl: './disallow-past-event-creation.html',
   providers: [Notifications],
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent implements OnInit {
   constructor(
@@ -61,7 +63,7 @@ export class AppComponent implements OnInit {
       const oldEvent = args.originEvent;
       const start = oldEvent && oldEvent.start ? oldEvent.start : null;
 
-      // handle recurring events
+      // Handle recurring events
       if (start && start < today) {
         this.notify.toast({
           message: "Can't move past event",
@@ -77,7 +79,7 @@ export class AppComponent implements OnInit {
       const oldEventOccurrence = args.oldEventOccurrence;
       const occurrenceStart = oldEventOccurrence && oldEventOccurrence.start ? oldEventOccurrence.start : null;
 
-      // handle recurring events
+      // Handle recurring events
       if ((start && start < today) || (occurrenceStart && occurrenceStart < today)) {
         return false;
       } else {
@@ -89,10 +91,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.http.jsonp<MbscCalendarEvent[]>('https://trial.mobiscroll.com/events/?vers=5', 'callback').subscribe((events: any) => {
       for (const event of events) {
-        // convert dates to date objects
+        // Convert dates to date objects
         event.start = event.start ? new Date(event.start) : event.start;
         event.end = event.end ? new Date(event.end) : event.end;
-        // mark past events as fixed by setting the event.editable property to false
+        // Mark past events as fixed by setting the event.editable property to false
         event.editable = event.start && today < event.start;
       }
       this.myEvents = events;

@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MbscCalendarEvent, MbscEventcalendarView, setOptions /* localeImport */ } from '@mobiscroll/angular';
+import { MbscCalendarEvent, MbscEventcalendarView, MbscModule, setOptions /* localeImport */ } from '@mobiscroll/angular';
 
 setOptions({
   // locale,
@@ -12,7 +13,8 @@ setOptions({
   styleUrl: './event-hooks.css',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './event-hooks.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
@@ -76,6 +78,12 @@ export class AppComponent implements OnInit {
   }
   onCellRightClick(): void {
     /* Logic for cell right click */
+  }
+  onCellHoverIn(): void {
+    /* Logic for cell hover in */
+  }
+  onCellHoverOut(): void {
+    /* Logic for cell hover out */
   }
   onDestroy(): void {
     // Your custom event handler goes here
@@ -158,8 +166,32 @@ export class AppComponent implements OnInit {
   onResourceOrderUpdate(): void {
     // Logic for resource update
   }
+  onResourceCreate(): void {
+    // Logic for resource create
+  }
+  onResourceCreated(): void {
+    // Logic for resource created
+  }
+  onResourceDelete(): void {
+    // Logic for resource delete
+  }
+  onResourceDeleted(): void {
+    // Logic for resource deleted
+  }
+  onResourceDragEnter(): void {
+    // Logic for resource update
+  }
+  onResourceDragLeave(): void {
+    // Logic for resource update
+  }
   onResourceRightClick(): void {
     // Logic for resource right click
+  }
+  onResourceHoverIn(): void {
+    // Logic for resource hover in
+  }
+  onResourceHoverOut(): void {
+    // Logic for resource hover out
   }
   onSelectedDateChange(): void {
     // Use it to keep track of the selected date externally
@@ -173,6 +205,11 @@ export class AppComponent implements OnInit {
   dragData2 = {
     title: 'External drag 2',
     color: '#ddfcf7',
+  };
+
+  dragData3 = {
+    name: 'External resource',
+    color: '#d19494',
   };
 
   ngOnInit(): void {

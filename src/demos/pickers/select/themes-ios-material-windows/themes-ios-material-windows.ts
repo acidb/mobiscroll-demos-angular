@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MbscSelectOptions /* localeImport */ } from '@mobiscroll/angular';
+import { MbscModule, MbscSelectOptions /* localeImport */ } from '@mobiscroll/angular';
 
 @Component({
   selector: 'app-select-themes-ios-material-windows',
   templateUrl: './themes-ios-material-windows.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
   myData = [
@@ -48,7 +50,7 @@ export class AppComponent {
   selectSettings: MbscSelectOptions = {
     // locale,
     display: 'inline',
-    theme: 'material', // can be 'ios', 'material', 'windows' or 'auto' - in case of 'auto', it will automatically be set based on the platform
-    themeVariant: 'dark', // can be 'light', 'dark' or 'auto' - in case of 'auto' it is set based in the active system theme
+    theme: 'material', // Can be 'ios', 'material', 'windows' or 'auto' - in case of 'auto', it will automatically be set based on the platform
+    themeVariant: 'dark', // Can be 'light', 'dark' or 'auto' - in case of 'auto' it is set based in the active system theme
   };
 }

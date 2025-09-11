@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { localeEs, setOptions } from '@mobiscroll/angular';
+import { localeEs, MbscModule, setOptions } from '@mobiscroll/angular';
 
 setOptions({
   // theme
@@ -8,8 +9,9 @@ setOptions({
 @Component({
   selector: 'app-range-localization',
   templateUrl: './localization.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
-  myLocale = localeEs; // sets the language of the component
+  myLocale = localeEs; // Sets the language of the component
 }

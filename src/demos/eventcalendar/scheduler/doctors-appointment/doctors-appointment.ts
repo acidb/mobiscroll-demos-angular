@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   MbscCalendarColor,
   MbscCalendarEvent,
   MbscEventcalendarOptions,
+  MbscModule,
   Notifications,
   setOptions /* localeImport */,
 } from '@mobiscroll/angular';
@@ -25,7 +27,8 @@ const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1)
   encapsulation: ViewEncapsulation.None,
   templateUrl: './doctors-appointment.html',
   providers: [Notifications],
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent implements OnInit {
   constructor(private notify: Notifications) {}
@@ -276,10 +279,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     for (const event of this.myData) {
-      // convert dates to date objects
+      // Convert dates to date objects
       event.start = event.start ? new Date(event.start as string) : event.start;
       event.end = event.end ? new Date(event.end as string) : event.end;
-      // mark past events as fixed by setting the event.editable property to false
+      // Mark past events as fixed by setting the event.editable property to false
       event.editable = !!(event.start && today < event.start);
     }
   }

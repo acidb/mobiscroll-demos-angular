@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { setOptions /* localeImport */ } from '@mobiscroll/angular';
+import { MbscModule, setOptions /* localeImport */ } from '@mobiscroll/angular';
 
 setOptions({
   // locale,
@@ -9,17 +10,18 @@ setOptions({
 @Component({
   selector: 'app-calendar-recurring-values',
   templateUrl: './recurring-values.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
   invalids = [
     {
       recurring: {
-        repeat: 'daily', // possible values: 'daily', 'weekly', 'monthly', 'yearly'
-        from: '2020-12-01', // the start date of the occurrences
-        until: '2021-01-31', // the end date of the occurrences
+        repeat: 'daily', // Possible values: 'daily', 'weekly', 'monthly', 'yearly'
+        from: '2020-12-01', // The start date of the occurrences
+        until: '2021-01-31', // The end date of the occurrences
       },
-      recurringException: ['2020-12-30', new Date(2020, 11, 31)], // can contain string or date object
+      recurringException: ['2020-12-30', new Date(2020, 11, 31)], // Can contain string or date object
       recurringExceptionRule: {
         repeat: 'monthly',
         day: 10,
@@ -28,15 +30,15 @@ export class AppComponent {
     {
       recurring: {
         repeat: 'weekly',
-        weekDays: 'SA', // comma separated list of the week days, possible values: 'SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'
-        interval: 2, // the time interval for the rule (every 2 weeks in this example)
+        weekDays: 'SA', // Comma separated list of the week days, possible values: 'SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'
+        interval: 2, // The time interval for the rule (every 2 weeks in this example)
       },
     },
     {
       recurring: {
         repeat: 'monthly',
         day: 15,
-        count: 12, // the number of occurrences
+        count: 12, // The number of occurrences
       },
     },
     {

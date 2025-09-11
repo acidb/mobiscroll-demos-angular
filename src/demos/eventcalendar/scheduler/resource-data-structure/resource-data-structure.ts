@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { MbscCalendarEvent, MbscEventcalendarView, MbscResource, setOptions /* localeImport */ } from '@mobiscroll/angular';
+import { MbscCalendarEvent, MbscEventcalendarView, MbscModule, MbscResource, setOptions /* localeImport */ } from '@mobiscroll/angular';
 import { dyndatetime } from '../../../../app/app.util';
 
 setOptions({
@@ -12,37 +13,38 @@ setOptions({
   styleUrl: './resource-data-structure.css',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './resource-data-structure.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MbscModule],
 })
 export class AppComponent {
   myResources: MbscResource[] = [
     {
-      // base properties
+      // Base properties
       id: 1,
       name: 'Ryan',
       color: '#ca4747',
       eventCreation: true,
-      // add any property you'd like
+      // Add any property you'd like
       title: 'UX Designer',
       job: 'Apollo Project',
     },
     {
-      // base properties
+      // Base properties
       id: 2,
       name: 'Kate',
       color: '#cc9900',
       eventCreation: true,
-      // add any property you'd like
+      // Add any property you'd like
       title: 'Product Developer',
       job: 'Yorick Project',
     },
     {
-      // base properties
+      // Base properties
       id: 3,
       name: 'John',
       color: '#01adff',
       eventCreation: true,
-      // add any property you'd like
+      // Add any property you'd like
       title: 'Network Administrator',
       job: 'Titus Project',
     },

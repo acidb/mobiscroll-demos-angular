@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { formatDate, MbscEventcalendarOptions, setOptions /* localeImport */ } from '@mobiscroll/angular';
+import { FormsModule } from '@angular/forms';
+import { formatDate, MbscEventcalendarOptions, MbscModule, setOptions /* localeImport */ } from '@mobiscroll/angular';
 import { dyndatetime } from '../../../../app/app.util';
 
 setOptions({
@@ -40,7 +42,8 @@ const defaultSlots = [
   styleUrl: './restaurant-shift-management.css',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './restaurant-shift-management.html',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, FormsModule, MbscModule],
 })
 export class AppComponent {
   resources = [
@@ -1956,7 +1959,7 @@ export class AppComponent {
   getShiftsNrs(date: any, slotId: number): any {
     const shiftList: any = [];
     for (const shift of this.shifts) {
-      // get slot id from resource id
+      // Get slot id from resource id
       const resourceNr = +shift.resource.toString().charAt(0);
       if (shift.slot === slotId && date === this.formatMyDate(shift.start)) {
         shiftList[resourceNr - 1] = (shiftList[resourceNr - 1] || 0) + 1;
