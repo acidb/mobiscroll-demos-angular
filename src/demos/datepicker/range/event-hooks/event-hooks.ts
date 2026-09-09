@@ -70,10 +70,6 @@ export class AppComponent {
     // Use it to load data on demand
   }
 
-  onPosition(): void {
-    // Logic for component positioning
-  }
-
   onTempChange(): void {
     // Logic for temporary value change
   }
