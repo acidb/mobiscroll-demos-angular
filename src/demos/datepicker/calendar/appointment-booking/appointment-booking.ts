@@ -54,7 +54,6 @@ export class AppComponent {
     minTime: '08:00',
     maxTime: '19:59',
     stepMinute: 60,
-    width: undefined,
     onPageLoading: (args) => {
       this.getDatetimes(args.firstDay, (bookings: any) => {
         this.datetimeLabels = bookings.labels;

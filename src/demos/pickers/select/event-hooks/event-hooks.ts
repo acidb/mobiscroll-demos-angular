@@ -81,10 +81,6 @@ export class AppComponent {
     // Your custom event handler goes here
   }
 
-  onPosition(): void {
-    // Logic for component positioning
-  }
-
   onTempChange(): void {
     // Logic for temporary value change
   }
