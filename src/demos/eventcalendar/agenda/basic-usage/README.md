@@ -4,7 +4,7 @@ To see this example live, check it out on our [demo page](https://demo.mobiscrol
 
 ## Demo description
 
-Use the <mbsc-eventcalendar></mbsc-eventcalendar> component and pass all the necessary options as attributes, like `[theme]="ios"`.
+Use the `&lt;mbsc-eventcalendar&gt;` component and pass all the necessary options as attributes, like `[theme]="ios"`.
 
 The events can be [passed in a couple of different ways](https://demo.mobiscroll.com/angular/agenda/load-inline-data#). In this example we are loading them through an external API.
 
