@@ -116,6 +116,7 @@ export class AppComponent {
     view: {
       timeline: { type: 'day' },
     },
+    selectMultipleEvents: true,
     dragToCreate: true,
     dragToMove: true,
     dragToResize: true,

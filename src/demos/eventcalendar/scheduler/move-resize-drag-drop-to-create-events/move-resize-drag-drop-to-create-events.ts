@@ -80,6 +80,7 @@ export class AppComponent {
     view: {
       scheduler: { type: 'week' },
     },
+    selectMultipleEvents: true,
     dragToCreate: true,
     dragToMove: true,
     dragToResize: true,
